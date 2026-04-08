@@ -108,7 +108,7 @@ export default function APInvestmentsWebsite() {
               </h1>
 
               <p className="mt-5 max-w-xl text-base leading-7 text-slate-600 sm:text-lg">
-                We invest in companies where execution, growth, and operational discipline drive real value.
+                We back businesses with strong fundamentals, real customer demand, and clear upside. Our focus is on companies where disciplined execution, smart capital, and faster decision making can unlock meaningful long term value and accelerate growth beyond what traditional investors enable.
               </p>
 
               <div className="mt-7 flex flex-wrap gap-3">
