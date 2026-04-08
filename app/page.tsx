@@ -84,59 +84,59 @@ export default function APInvestmentsWebsite() {
 
   return (
     <div className="min-h-screen bg-[#f8f5ef] text-slate-900">
-      <section className="relative overflow-hidden border-b border-[#d8c8aa]/60 bg-[linear-gradient(135deg,#fbfaf7_0%,#f3ede3_55%,#ede3d2_100%)]">
+      <section className="relative overflow-hidden border-b border-[#d8c8aa]/50 bg-[linear-gradient(135deg,#fbfaf7_0%,#f3ede3_55%,#ede3d2_100%)]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(184,155,99,0.16),transparent_26%),radial-gradient(circle_at_left,rgba(255,255,255,0.55),transparent_24%)]" />
         <div className="relative mx-auto max-w-7xl px-5 py-6 sm:px-8 lg:px-10">
-          <header className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+          <header className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <APGLogoMark />
             <a
               href="#contact"
-              className="rounded-full border border-[#cbb58a] bg-white/80 px-5 py-2.5 text-sm font-medium text-slate-900 shadow-sm transition hover:bg-white"
+              className="rounded-full border border-[#cbb58a] bg-white/80 px-5 py-2 text-sm font-medium text-slate-900 transition hover:bg-white"
             >
               Contact
             </a>
           </header>
 
-          <div className="grid items-start gap-12 py-16 lg:grid-cols-[1.15fr_0.85fr] lg:py-24">
+          <div className="grid items-start gap-10 py-14 lg:grid-cols-[1.2fr_0.8fr] lg:py-20">
             <div className="max-w-3xl">
               <div className="mb-5 inline-flex rounded-full border border-[#d8c8aa] bg-white/70 px-4 py-2 text-sm text-[#7a6337] shadow-sm">
                 Private capital, strategic insight, and long term operator value
               </div>
 
-              <h1 className="max-w-4xl text-5xl font-semibold leading-[1.02] tracking-[-0.03em] text-slate-900 sm:text-6xl lg:text-[4.5rem]">
+              <h1 className="max-w-4xl text-4xl font-semibold leading-[1.06] tracking-[-0.025em] text-slate-900 sm:text-5xl lg:text-[3.6rem]">
                 Backing exceptional businesses with disciplined capital, sound judgment, and operator led advantage.
               </h1>
 
-              <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
+              <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-600">
                 A.P.G Investments Ltd. backs select startups and growth stage businesses with private capital and hands on strategic support. We focus on companies where disciplined execution, commercial traction, digital growth, and operational excellence can create meaningful long term value.
               </p>
 
-              <div className="mt-9 flex flex-wrap gap-4">
+              <div className="mt-8 flex flex-wrap gap-3">
                 <a
                   href="#thesis"
-                  className="rounded-full bg-slate-900 px-6 py-3.5 text-sm font-semibold text-white shadow-[0_10px_24px_rgba(15,23,42,0.14)] transition hover:-translate-y-0.5 hover:opacity-95"
+                  className="rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:opacity-95"
                 >
                   Our investment focus
                 </a>
                 <a
                   href="#contact"
-                  className="rounded-full border border-[#cbb58a] bg-white/80 px-6 py-3.5 text-sm font-semibold text-slate-900 shadow-sm transition hover:-translate-y-0.5 hover:bg-white"
+                  className="rounded-full border border-[#cbb58a] bg-white/60 px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-white"
                 >
                   Pitch your company
                 </a>
               </div>
             </div>
 
-            <div className="grid gap-5 self-end">
-              <div className="rounded-3xl border border-[#d7c7aa] bg-white p-7 shadow-[0_12px_30px_rgba(15,23,42,0.05)]">
+            <div className="grid gap-4 self-end">
+              <div className="rounded-3xl border border-[#d7c7aa] bg-white p-6 shadow-[0_10px_24px_rgba(15,23,42,0.04)]">
                 <div className="text-sm text-slate-500">Typical check size</div>
                 <div className="mt-2 text-2xl font-semibold text-slate-900">$25K to $100K</div>
               </div>
-              <div className="rounded-3xl border border-[#d7c7aa] bg-white p-7 shadow-[0_12px_30px_rgba(15,23,42,0.05)]">
+              <div className="rounded-3xl border border-[#d7c7aa] bg-white p-6 shadow-[0_10px_24px_rgba(15,23,42,0.04)]">
                 <div className="text-sm text-slate-500">Stage</div>
                 <div className="mt-2 text-2xl font-semibold text-slate-900">Pre seed and seed</div>
               </div>
-              <div className="rounded-3xl border border-[#d7c7aa] bg-white p-7 shadow-[0_12px_30px_rgba(15,23,42,0.05)]">
+              <div className="rounded-3xl border border-[#d7c7aa] bg-white p-6 shadow-[0_10px_24px_rgba(15,23,42,0.04)]">
                 <div className="text-sm text-slate-500">Approach</div>
                 <div className="mt-2 text-2xl font-semibold text-slate-900">Selective and operator led</div>
               </div>
@@ -145,16 +145,16 @@ export default function APInvestmentsWebsite() {
         </div>
       </section>
 
-      <section id="thesis" className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10">
-        <div className="grid gap-12 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
+      <section id="thesis" className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-10">
+        <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <div className="text-sm font-semibold uppercase tracking-[0.3em] text-[#8b6f3d]">
               Investment thesis
             </div>
-            <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-[-0.03em] text-slate-900 sm:text-5xl">
+            <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.02em] text-slate-900 sm:text-4xl">
               Focused sectors where execution matters.
             </h2>
-            <p className="mt-5 max-w-xl text-base leading-8 text-slate-600 sm:text-lg">
+            <p className="mt-5 max-w-xl text-base leading-7 text-slate-600">
               We are most interested in opportunities where capital, digital growth strategy, and strong operating discipline can accelerate the business across consumer, trade, and digital sectors.
             </p>
           </div>
@@ -163,7 +163,7 @@ export default function APInvestmentsWebsite() {
             {thesis.map((item) => (
               <div
                 key={item}
-                className="rounded-3xl border border-[#d7c7aa] bg-white p-7 shadow-[0_12px_30px_rgba(15,23,42,0.05)] transition hover:-translate-y-0.5"
+                className="rounded-3xl border border-[#d7c7aa] bg-white p-6 shadow-[0_10px_30px_rgba(15,23,42,0.04)]"
               >
                 <div className="text-lg font-medium text-slate-900">{item}</div>
               </div>
@@ -173,38 +173,36 @@ export default function APInvestmentsWebsite() {
       </section>
 
       <section className="border-y border-[#d7c7aa] bg-[#f3ede4]">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10">
+        <div className="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-10">
           <div className="mb-10 max-w-2xl">
             <div className="text-sm font-semibold uppercase tracking-[0.3em] text-[#8b6f3d]">
               Why founders work with us
             </div>
-            <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-[-0.03em] text-slate-900 sm:text-5xl">
+            <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.02em] text-slate-900 sm:text-4xl">
               More than capital.
             </h2>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-5 md:grid-cols-3">
             {values.map((item) => (
               <div
                 key={item.title}
-                className="rounded-3xl border border-[#d7c7aa] bg-white p-7 shadow-[0_12px_32px_rgba(15,23,42,0.05)] transition hover:-translate-y-0.5"
+                className="rounded-3xl border border-[#d7c7aa] bg-white p-7 shadow-[0_12px_32px_rgba(15,23,42,0.05)]"
               >
-                <h3 className="mt-1 text-2xl font-semibold tracking-[-0.02em] text-slate-900">
-                  {item.title}
-                </h3>
-                <p className="mt-4 text-base leading-7 text-slate-600">{item.text}</p>
+                <h3 className="text-xl font-semibold text-slate-900">{item.title}</h3>
+                <p className="mt-4 text-sm leading-7 text-slate-600">{item.text}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10">
-        <div className="mb-16 grid gap-6 md:grid-cols-3">
+      <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-10">
+        <div className="mb-16 grid gap-5 md:grid-cols-3">
           {differentiators.map((item) => (
             <div
               key={item.title}
-              className="rounded-3xl border border-[#d7c7aa] bg-[linear-gradient(180deg,#fffdf9_0%,#f7f1e7_100%)] p-7 shadow-[0_12px_32px_rgba(15,23,42,0.05)] transition hover:-translate-y-0.5"
+              className="rounded-3xl border border-[#d7c7aa] bg-[linear-gradient(180deg,#fffdf9_0%,#f7f1e7_100%)] p-7 shadow-[0_12px_32px_rgba(15,23,42,0.05)]"
             >
               <div className="text-sm font-semibold uppercase tracking-[0.24em] text-[#8b6f3d]">
                 Why A.P.G
@@ -212,25 +210,24 @@ export default function APInvestmentsWebsite() {
               <h3 className="mt-4 text-2xl font-semibold tracking-[-0.02em] text-slate-900">
                 {item.title}
               </h3>
-              <p className="mt-4 text-base leading-7 text-slate-600">{item.text}</p>
+              <p className="mt-4 text-sm leading-7 text-slate-600">{item.text}</p>
             </div>
           ))}
         </div>
 
-        <div className="grid gap-14 lg:grid-cols-2">
+        <div className="grid gap-12 lg:grid-cols-2">
           <div>
             <div className="text-sm font-semibold uppercase tracking-[0.3em] text-[#8b6f3d]">
               What we look for
             </div>
-            <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-[-0.03em] text-slate-900 sm:text-5xl">
+            <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.02em] text-slate-900 sm:text-4xl">
               Clear founder quality and clear upside.
             </h2>
-
             <div className="mt-8 space-y-4">
               {criteria.map((item) => (
                 <div
                   key={item}
-                  className="flex items-start gap-4 rounded-2xl border border-[#d7c7aa] bg-white p-5 shadow-[0_10px_24px_rgba(15,23,42,0.04)]"
+                  className="flex items-start gap-4 rounded-2xl border border-[#d7c7aa] bg-white p-4 shadow-[0_8px_24px_rgba(15,23,42,0.03)]"
                 >
                   <div className="mt-1 h-2.5 w-2.5 rounded-full bg-[#8b6f3d]" />
                   <p className="text-slate-700">{item}</p>
@@ -243,21 +240,18 @@ export default function APInvestmentsWebsite() {
             <div className="text-sm font-semibold uppercase tracking-[0.3em] text-[#8b6f3d]">
               Process
             </div>
-            <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-[-0.03em] text-slate-900 sm:text-5xl">
+            <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.02em] text-slate-900 sm:text-4xl">
               Simple and founder friendly.
             </h2>
-
             <div className="mt-8 space-y-5">
               {process.map((item) => (
                 <div
                   key={item.step}
-                  className="rounded-3xl border border-[#d7c7aa] bg-white p-7 shadow-[0_10px_28px_rgba(15,23,42,0.04)]"
+                  className="rounded-3xl border border-[#d7c7aa] bg-white p-6 shadow-[0_10px_28px_rgba(15,23,42,0.04)]"
                 >
                   <div className="text-sm text-slate-500">{item.step}</div>
-                  <h3 className="mt-3 text-2xl font-semibold tracking-[-0.02em] text-slate-900">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-base leading-7 text-slate-600">{item.text}</p>
+                  <h3 className="mt-2 text-xl font-semibold text-slate-900">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">{item.text}</p>
                 </div>
               ))}
             </div>
@@ -266,16 +260,16 @@ export default function APInvestmentsWebsite() {
       </section>
 
       <section id="contact" className="border-t border-[#d7c7aa] bg-[#fbfaf7]">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10">
-          <div className="rounded-[2rem] border border-[#d7c7aa] bg-white p-6 shadow-[0_16px_40px_rgba(15,23,42,0.06)] sm:p-10 lg:flex lg:items-start lg:justify-between lg:gap-12">
+        <div className="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-10">
+          <div className="rounded-[2rem] border border-[#d7c7aa] bg-white p-6 shadow-sm sm:p-10 lg:flex lg:items-start lg:justify-between lg:gap-10">
             <div className="max-w-2xl">
               <div className="text-sm font-semibold uppercase tracking-[0.3em] text-[#8b6f3d]">
                 Contact
               </div>
-              <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-[-0.03em] text-slate-900 sm:text-5xl">
+              <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.02em] text-slate-900 sm:text-4xl">
                 Ready to start a conversation?
               </h2>
-              <p className="mt-5 text-base leading-8 text-slate-600 sm:text-lg">
+              <p className="mt-5 text-base leading-7 text-slate-600">
                 Share a brief overview of your business, current traction, funding needs, and where you believe A.P.G can add value. We review opportunities selectively and focus on companies where our capital and operating experience can make a real difference.
               </p>
             </div>
@@ -284,58 +278,58 @@ export default function APInvestmentsWebsite() {
               <form
                 action="https://formsubmit.co/hello@apginvests.com"
                 method="POST"
-                className="space-y-4 rounded-3xl border border-[#d7c7aa] bg-[#fcfaf6] p-6 shadow-[0_12px_28px_rgba(15,23,42,0.05)]"
+                className="space-y-4 rounded-3xl border border-[#d7c7aa] bg-[#fcfaf6] p-6 shadow-sm"
               >
                 <input type="hidden" name="_subject" value="New inquiry from apginvests.com" />
                 <input type="hidden" name="_captcha" value="false" />
                 <input type="hidden" name="_template" value="table" />
 
                 <div>
-                  <label className="mb-2 block text-sm text-slate-600">Name</label>
+                  <label className="mb-2 block text-sm text-slate-500">Name</label>
                   <input
                     type="text"
                     name="name"
                     required
-                    className="w-full rounded-2xl border border-[#d2c3a4] bg-white px-4 py-3 text-slate-900 outline-none placeholder:text-slate-400 focus:border-[#b89b63] focus:ring-2 focus:ring-[#efe3ca]"
+                    className="w-full rounded-2xl border border-[#d2c3a4] bg-white px-4 py-3 text-slate-900 outline-none placeholder:text-slate-400"
                     placeholder="Your name"
                   />
                 </div>
 
                 <div>
-                  <label className="mb-2 block text-sm text-slate-600">Email</label>
+                  <label className="mb-2 block text-sm text-slate-500">Email</label>
                   <input
                     type="email"
                     name="email"
                     required
-                    className="w-full rounded-2xl border border-[#d2c3a4] bg-white px-4 py-3 text-slate-900 outline-none placeholder:text-slate-400 focus:border-[#b89b63] focus:ring-2 focus:ring-[#efe3ca]"
+                    className="w-full rounded-2xl border border-[#d2c3a4] bg-white px-4 py-3 text-slate-900 outline-none placeholder:text-slate-400"
                     placeholder="you@company.com"
                   />
                 </div>
 
                 <div>
-                  <label className="mb-2 block text-sm text-slate-600">Company</label>
+                  <label className="mb-2 block text-sm text-slate-500">Company</label>
                   <input
                     type="text"
                     name="company"
-                    className="w-full rounded-2xl border border-[#d2c3a4] bg-white px-4 py-3 text-slate-900 outline-none placeholder:text-slate-400 focus:border-[#b89b63] focus:ring-2 focus:ring-[#efe3ca]"
+                    className="w-full rounded-2xl border border-[#d2c3a4] bg-white px-4 py-3 text-slate-900 outline-none placeholder:text-slate-400"
                     placeholder="Company name"
                   />
                 </div>
 
                 <div>
-                  <label className="mb-2 block text-sm text-slate-600">Message</label>
+                  <label className="mb-2 block text-sm text-slate-500">Message</label>
                   <textarea
                     name="message"
                     required
                     rows={5}
-                    className="w-full rounded-2xl border border-[#d2c3a4] bg-white px-4 py-3 text-slate-900 outline-none placeholder:text-slate-400 focus:border-[#b89b63] focus:ring-2 focus:ring-[#efe3ca]"
+                    className="w-full rounded-2xl border border-[#d2c3a4] bg-white px-4 py-3 text-slate-900 outline-none placeholder:text-slate-400"
                     placeholder="Tell us about your business, traction, and raise."
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full rounded-full bg-slate-900 px-6 py-3.5 text-sm font-semibold text-white shadow-[0_10px_24px_rgba(15,23,42,0.14)] transition hover:-translate-y-0.5 hover:opacity-95"
+                  className="w-full rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:opacity-95"
                 >
                   Submit inquiry
                 </button>
