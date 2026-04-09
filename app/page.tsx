@@ -13,7 +13,7 @@ export default function Page() {
 
       {/* HEADER */}
       <header className="max-w-7xl mx-auto px-5 py-6 flex items-center justify-between">
-        <img src="/apg-logo.svg" className="h-14 w-auto" />
+        <img src="/apg-final-logo.svg" className="h-14 w-auto" />
 
         <nav className="flex gap-6 text-sm">
           <a href="#focus">Focus</a>
