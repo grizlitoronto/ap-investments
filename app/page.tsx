@@ -101,12 +101,11 @@ export default function APInvestmentsWebsite() {
         <div className="relative mx-auto max-w-7xl px-5 py-8 sm:px-8 lg:px-10">
           <header className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
             <APGLogoMark />
-            <a
-              href="#contact"
-              className="rounded-full border border-[#cbb58a] bg-white px-5 py-2.5 text-sm font-medium tracking-[0.08em] text-slate-900 shadow-sm transition hover:bg-[#faf6ef]"
-            >
-              Contact
-            </a>
+            <nav className="flex flex-wrap items-center gap-3 text-sm font-medium tracking-[0.08em] text-slate-700">
+              <a href="#thesis" className="rounded-full px-4 py-2 transition hover:bg-white/70">Focus</a>
+              <a href="#credibility" className="rounded-full px-4 py-2 transition hover:bg-white/70">Why A.P.G</a>
+              <a href="#contact" className="rounded-full border border-[#cbb58a] bg-white px-5 py-2.5 text-slate-900 shadow-sm transition hover:bg-[#faf6ef]">Contact</a>
+            </nav>
           </header>
 
           <div className="grid items-center gap-10 py-14 lg:grid-cols-[1.08fr_0.92fr] lg:gap-14 lg:py-18">
