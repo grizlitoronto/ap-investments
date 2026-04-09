@@ -1,33 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="260" viewBox="0 0 1200 260" fill="none">
-  <rect width="1200" height="260" fill="#F8F5EF"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="400" viewBox="0 0 1600 400" fill="none">
+  <rect width="1600" height="400" fill="#F8F5EF"/>
 
-  <!-- Monogram Box -->
-  <g transform="translate(40,30)">
-    <rect x="0.5" y="0.5" width="150" height="150" rx="18" fill="#FFFFFF" stroke="#DCD1B8" stroke-width="1"/>
-    <text x="75" y="105" text-anchor="middle"
+  <!-- Bigger Monogram -->
+  <g transform="translate(60,60)">
+    <rect x="0.5" y="0.5" width="220" height="220" rx="28" fill="#FFFFFF" stroke="#DCD1B8" stroke-width="1.5"/>
+    <text x="110" y="155" text-anchor="middle"
       font-family="Georgia, serif"
-      font-size="82"
+      font-size="120"
       font-weight="700"
-      letter-spacing="4"
+      letter-spacing="6"
       fill="#0F172A">APG</text>
   </g>
 
-  <!-- Wordmark -->
-  <g transform="translate(220,90)">
-    <text x="0" y="40"
+  <!-- Larger Wordmark -->
+  <g transform="translate(340,140)">
+    <text x="0" y="60"
       font-family="Georgia, serif"
-      font-size="44"
+      font-size="64"
       font-weight="600"
-      letter-spacing="0.5"
+      letter-spacing="1"
       fill="#0F172A">
       A.P.G Investments Ltd.
     </text>
 
-    <text x="2" y="78"
+    <text x="2" y="110"
       font-family="Arial, Helvetica, sans-serif"
-      font-size="13"
+      font-size="20"
       font-weight="600"
-      letter-spacing="6"
+      letter-spacing="8"
       fill="#8B6F3D">
       PRIVATE INVESTMENT FIRM
     </text>
