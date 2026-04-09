@@ -5,24 +5,23 @@ import { motion } from "framer-motion";
 function APGLogoMark() {
   return (
     <div className="flex items-center gap-4">
-      <div className="flex h-14 w-14 items-center justify-center rounded-lg border border-[#d6c7a8] bg-white shadow-sm">
-        <span className="text-[15px] font-semibold tracking-[0.35em] text-slate-900">
-          APG
-        </span>
+      <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-[#d9ccb3] bg-white shadow-[0_8px_20px_rgba(15,23,42,0.05)] sm:h-16 sm:w-16">
+        <svg viewBox="0 0 64 64" className="h-9 w-9 sm:h-10 sm:w-10" aria-hidden="true">
+          <path d="M12 50V14h15.4c10 0 15.8 5 15.8 13.1 0 8.4-6.3 13.5-16.4 13.5H18.8V50H12Zm6.8-15.5h7.1c5.8 0 9.2-2.6 9.2-7.1 0-4.4-3.2-7-8.8-7h-7.5v14.1Z" fill="#111827"/>
+          <path d="M37.5 50V14h6.1l8.2 13.6c1.9 3.2 3.1 6 3.1 6h.1s-.3-3.7-.3-7V14H61v36h-6l-8.3-13.5c-1.9-3.2-3.1-6-3.1-6h-.1s.3 3.7.3 7V50h-6.3Z" fill="#8b6f3d"/>
+        </svg>
       </div>
-
       <div className="leading-tight">
-        <div className="font-serif text-[1.15rem] font-semibold tracking-[0.08em] text-slate-900">
+        <div className="font-serif text-[1.12rem] font-semibold tracking-[0.08em] text-slate-900 sm:text-[1.28rem]">
           A.P.G Investments Ltd.
         </div>
-        <div className="text-[11px] uppercase tracking-[0.32em] text-[#8b6f3d]">
+        <div className="mt-1 text-[11px] uppercase tracking-[0.34em] text-[#8b6f3d] sm:text-xs">
           Private Investment Firm
         </div>
       </div>
     </div>
   );
 }
-
 
 const fadeUp = {
   hidden: { opacity: 0, y: 22 },
@@ -57,15 +56,15 @@ export default function APInvestmentsWebsite() {
   const credibility = [
     {
       stat: "Practical value creation",
-      label: "Growth, conversion, operating leverage, and strategic execution.",
+      label: "Growth strategy, conversion, operating leverage, and hands on commercial support.",
     },
     {
       stat: "Direct access",
-      label: "No layers, no unnecessary process, and no institutional theater.",
+      label: "Founders work directly with decision makers, not through layers of process.",
     },
     {
-      stat: "Long term mindset",
-      label: "Built for durable value, not just quick optics or passive ownership.",
+      stat: "High signal review",
+      label: "We look for businesses with real traction, strong operators, and credible upside.",
     },
   ];
 
@@ -123,11 +122,11 @@ export default function APInvestmentsWebsite() {
               </div>
 
               <h1 className="mt-5 max-w-4xl font-serif text-[2.85rem] font-semibold leading-[0.98] tracking-[-0.03em] text-slate-900 sm:text-[4rem] lg:text-[4.7rem]">
-                Backing strong businesses with capital and speed.
+                Backing high potential businesses with decisive capital and operator insight.
               </h1>
 
               <p className="mt-5 max-w-2xl text-[1.05rem] leading-8 text-slate-600 sm:text-[1.12rem]">
-                We back businesses with strong fundamentals, real customer demand, and clear upside. Our focus is on companies where disciplined execution, smart capital, and faster decision making unlock meaningful long term value.
+                We back businesses with strong fundamentals, real commercial demand, and clear room to scale. Our focus is on opportunities where disciplined execution, practical strategic support, and fast decision making can unlock outsized long term value.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
@@ -221,7 +220,7 @@ export default function APInvestmentsWebsite() {
               A practical investment partner with real operating context.
             </h2>
             <p className="mt-4 text-[1.02rem] leading-8 text-slate-600">
-              Founders and business owners do not just need capital. They need clear thinking, quick decisions, and a partner who understands growth, execution, and operational leverage.
+              Founders and business owners do not just need capital. They need quick conviction, direct access, and a partner who understands growth, execution, and operational leverage. We aim to be highly responsive, selective, and useful from the first conversation.
             </p>
           </motion.div>
 
@@ -328,7 +327,7 @@ export default function APInvestmentsWebsite() {
                 Ready to start a conversation?
               </h2>
               <p className="mt-4 max-w-2xl text-[1.02rem] leading-8 text-slate-600">
-                Share a brief overview of your business, current traction, funding needs, and where you believe A.P.G can add value.
+                Share a brief overview of your business, current traction, funding needs, and why A.P.G is the right fit. We review opportunities selectively and prioritize situations where speed, clarity, and practical support matter.
               </p>
             </div>
 
