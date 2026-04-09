@@ -5,23 +5,23 @@ import { motion } from "framer-motion";
 function APGLogoMark() {
   return (
     <div className="flex items-center gap-4">
-      <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-[#d9ccb3] bg-white shadow-[0_8px_20px_rgba(15,23,42,0.05)] sm:h-16 sm:w-16">
-        <svg viewBox="0 0 64 64" className="h-9 w-9 sm:h-10 sm:w-10" aria-hidden="true">
-          <path d="M12 50V14h15.4c10 0 15.8 5 15.8 13.1 0 8.4-6.3 13.5-16.4 13.5H18.8V50H12Zm6.8-15.5h7.1c5.8 0 9.2-2.6 9.2-7.1 0-4.4-3.2-7-8.8-7h-7.5v14.1Z" fill="#111827"/>
-          <path d="M37.5 50V14h6.1l8.2 13.6c1.9 3.2 3.1 6 3.1 6h.1s-.3-3.7-.3-7V14H61v36h-6l-8.3-13.5c-1.9-3.2-3.1-6-3.1-6h-.1s.3 3.7.3 7V50h-6.3Z" fill="#8b6f3d"/>
-        </svg>
-      </div>
-      <div className="leading-tight">
-        <div className="font-serif text-[1.12rem] font-semibold tracking-[0.08em] text-slate-900 sm:text-[1.28rem]">
-          A.P.G Investments Ltd.
-        </div>
-        <div className="mt-1 text-[11px] uppercase tracking-[0.34em] text-[#8b6f3d] sm:text-xs">
-          Private Investment Firm
-        </div>
-      </div>
+      <img
+        src="/apg-logo-light.svg"
+        alt="A.P.G Investments Ltd."
+        className="h-14 w-auto sm:h-16"
+      />
     </div>
   );
 }
+
+export const metadata = {
+  title: "A.P.G Investments Ltd.",
+  description: "Private Investment Firm",
+  icons: {
+    icon: "/favicon.svg",
+  },
+};
+
 
 const fadeUp = {
   hidden: { opacity: 0, y: 22 },
