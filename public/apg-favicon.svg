@@ -1,4 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
-  <rect x="1" y="1" width="62" height="62" rx="12" fill="#FFFFFF" stroke="#D9CCB3" stroke-width="2"/>
-  <text x="32" y="39" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="20" font-weight="700" letter-spacing="2.5" fill="#111827">APG</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" fill="none">
+  <rect x="4" y="4" width="120" height="120" rx="20" fill="#FFFFFF" stroke="#DCD1B8" stroke-width="2"/>
+  <text x="64" y="78" text-anchor="middle"
+    font-family="Georgia, serif"
+    font-size="48"
+    font-weight="700"
+    letter-spacing="3"
+    fill="#0F172A">APG</text>
 </svg>

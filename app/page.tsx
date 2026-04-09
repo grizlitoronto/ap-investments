@@ -12,30 +12,38 @@ export default function Page() {
     <div className="min-h-screen bg-[#f8f5ef] text-slate-900">
 
       {/* HEADER */}
-     <header className="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between">
-     <img src="/apg-final-logo.svg" className="h-20 sm:h-24 w-auto scale-110" />    
+      <header className="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between">
+        <div className="flex items-center">
+          <img src="/apg-logo.svg" className="h-20 sm:h-20 w-auto" />
+        </div>
 
-        <nav className="flex gap-6 text-sm">
-          <a href="#focus">Focus</a>
-          <a href="#why">Why A.P.G</a>
-          <a href="#contact">Contact</a>
+        <nav className="flex gap-6 text-[14px] text-slate-700">
+          <a href="#focus" className="hover:text-black">Focus</a>
+          <a href="#why" className="hover:text-black">Why A.P.G</a>
+          <a href="#contact" className="hover:text-black">Contact</a>
         </nav>
       </header>
 
       {/* HERO */}
-      <section className="max-w-7xl mx-auto px-5 py-20 grid lg:grid-cols-2 gap-12 items-center">
+      <section className="max-w-7xl mx-auto px-5 pt-10 pb-20 grid lg:grid-cols-2 gap-16 items-center">
         
+        {/* LEFT */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
           animate="show"
+          className="max-w-2xl"
         >
-          <h1 className="text-4xl lg:text-5xl font-serif font-semibold leading-tight">
+          <div className="text-[11px] uppercase tracking-[0.3em] text-[#8b6f3d] mb-4">
+            Private capital • Operator led
+          </div>
+
+          <h1 className="text-[2.8rem] sm:text-[3.2rem] lg:text-[3.6rem] font-serif font-semibold leading-[1.05] tracking-[-0.02em]">
             Backing high potential businesses with decisive capital and operator insight.
           </h1>
 
-          <p className="mt-6 text-slate-600 text-lg leading-8 max-w-xl">
-            We invest in businesses with real demand, strong operators, and clear room to scale. Our focus is on execution, speed, and practical value creation.
+          <p className="mt-6 text-[1.05rem] leading-8 text-slate-600">
+            We invest in businesses with real demand, strong operators, and clear room to scale. Our focus is execution, speed, and practical value creation.
           </p>
 
           <div className="mt-8 flex gap-4">
@@ -55,24 +63,25 @@ export default function Page() {
           </div>
         </motion.div>
 
+        {/* RIGHT */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
           animate="show"
           transition={{ delay: 0.1 }}
-          className="grid gap-4"
+          className="grid gap-5"
         >
-          <div className="border p-6 rounded-xl bg-white">
+          <div className="border border-[#d7c7aa] p-6 rounded-xl bg-white">
             <div className="text-sm text-slate-500">Check size</div>
             <div className="text-xl font-semibold">$25K to $100K</div>
           </div>
 
-          <div className="border p-6 rounded-xl bg-white">
+          <div className="border border-[#d7c7aa] p-6 rounded-xl bg-white">
             <div className="text-sm text-slate-500">Stage</div>
             <div className="text-xl font-semibold">Pre seed and seed</div>
           </div>
 
-          <div className="border p-6 rounded-xl bg-white">
+          <div className="border border-[#d7c7aa] p-6 rounded-xl bg-white">
             <div className="text-sm text-slate-500">Approach</div>
             <div className="text-xl font-semibold">Fast and selective</div>
           </div>
@@ -94,7 +103,7 @@ export default function Page() {
             "Healthcare services",
             "Logistics and distribution",
           ].map((item) => (
-            <div key={item} className="border p-6 rounded-xl bg-white text-center">
+            <div key={item} className="border border-[#d7c7aa] p-6 rounded-xl bg-white text-center">
               {item}
             </div>
           ))}
@@ -114,7 +123,7 @@ export default function Page() {
               ["Fast decisions", "No long processes or unnecessary friction"],
               ["Selective capital", "Focused, high conviction investments"],
             ].map(([title, text]) => (
-              <div key={title} className="border p-6 rounded-xl bg-white text-center">
+              <div key={title} className="border border-[#d7c7aa] p-6 rounded-xl bg-white text-center">
                 <div className="font-semibold">{title}</div>
                 <p className="text-sm mt-2 text-slate-600">{text}</p>
               </div>
@@ -138,7 +147,7 @@ export default function Page() {
               "Room to scale",
               "Execution driven businesses",
             ].map((item) => (
-              <div key={item} className="border p-4 rounded-xl bg-white">
+              <div key={item} className="border border-[#d7c7aa] p-4 rounded-xl bg-white">
                 {item}
               </div>
             ))}
@@ -156,7 +165,7 @@ export default function Page() {
               ["02", "Quick evaluation"],
               ["03", "Fast decision"],
             ].map(([num, text]) => (
-              <div key={num} className="border p-5 rounded-xl bg-white">
+              <div key={num} className="border border-[#d7c7aa] p-5 rounded-xl bg-white">
                 <div className="text-sm text-slate-500">{num}</div>
                 <div className="font-semibold">{text}</div>
               </div>
@@ -166,7 +175,7 @@ export default function Page() {
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="border-t py-20">
+      <section id="contact" className="border-t border-[#d7c7aa] py-20">
         <div className="max-w-7xl mx-auto px-5 grid lg:grid-cols-2 gap-12">
           
           <div>
