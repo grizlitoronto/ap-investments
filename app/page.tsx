@@ -12,8 +12,8 @@ export default function Page() {
     <div className="min-h-screen bg-[#f8f5ef] text-slate-900">
 
       {/* HEADER */}
-      <header className="max-w-7xl mx-auto px-5 py-6 flex items-center justify-between">
-       <img src="/apg-final-logo.svg" className="h-16 sm:h-20 w-auto" /> 
+     <header className="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between">
+     <img src="/apg-final-logo.svg" className="h-20 sm:h-24 w-auto scale-110" />    
 
         <nav className="flex gap-6 text-sm">
           <a href="#focus">Focus</a>
