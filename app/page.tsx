@@ -5,28 +5,24 @@ import { motion } from "framer-motion";
 function APGLogoMark() {
   return (
     <div className="flex items-center gap-4">
-      <div className="relative flex h-16 w-16 items-center justify-center rounded-[1.35rem] border border-[#b89b63]/60 bg-[linear-gradient(145deg,#fbf6ee_0%,#e9dec9_100%)] shadow-[0_12px_32px_rgba(111,90,51,0.14)] sm:h-20 sm:w-20">
-        <svg
-          viewBox="0 0 64 64"
-          className="h-11 w-11 sm:h-14 sm:w-14"
-          aria-hidden="true"
-        >
-          <rect x="7" y="7" width="50" height="50" rx="14" fill="rgba(255,255,255,0.55)" stroke="rgba(184,155,99,0.45)" />
-          <path d="M19 42V22h8.2c5.4 0 8.5 2.7 8.5 7.1 0 4.6-3.4 7.3-8.8 7.3h-4.1V42H19Zm3.8-8.7h3.8c3.1 0 5-1.4 5-4.1 0-2.5-1.7-4-4.8-4h-4V33.3Z" fill="#6f5a33" />
-          <path d="M36.8 42V22h4.2l7.6 12.7c.8 1.3 1.4 2.6 1.4 2.6h.1s-.2-1.6-.2-3.5V22h3.7v20h-4.2l-7.6-12.7c-.8-1.3-1.4-2.6-1.4-2.6h-.1s.2 1.6.2 3.5V42h-3.7Z" fill="#6f5a33" opacity="0.9" />
-        </svg>
+      <div className="flex h-14 w-14 items-center justify-center rounded-lg border border-[#d6c7a8] bg-white shadow-sm">
+        <span className="text-[15px] font-semibold tracking-[0.35em] text-slate-900">
+          APG
+        </span>
       </div>
-      <div>
-        <div className="font-serif text-[1.08rem] font-semibold tracking-[0.14em] text-slate-900 sm:text-[1.3rem]">
+
+      <div className="leading-tight">
+        <div className="font-serif text-[1.15rem] font-semibold tracking-[0.08em] text-slate-900">
           A.P.G Investments Ltd.
         </div>
-        <div className="mt-1 text-[11px] uppercase tracking-[0.34em] text-[#8b6f3d] sm:text-xs">
+        <div className="text-[11px] uppercase tracking-[0.32em] text-[#8b6f3d]">
           Private Investment Firm
         </div>
       </div>
     </div>
   );
 }
+
 
 const fadeUp = {
   hidden: { opacity: 0, y: 22 },
