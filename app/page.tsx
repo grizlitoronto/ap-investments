@@ -14,15 +14,6 @@ function APGLogoMark() {
   );
 }
 
-export const metadata = {
-  title: "A.P.G Investments Ltd.",
-  description: "Private Investment Firm",
-  icons: {
-    icon: "/favicon.svg",
-  },
-};
-
-
 const fadeUp = {
   hidden: { opacity: 0, y: 22 },
   show: { opacity: 1, y: 0 },
@@ -102,9 +93,24 @@ export default function APInvestmentsWebsite() {
           <header className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
             <APGLogoMark />
             <nav className="flex flex-wrap items-center gap-3 text-sm font-medium tracking-[0.08em] text-slate-700">
-              <a href="#thesis" className="rounded-full px-4 py-2 transition hover:bg-white/70">Focus</a>
-              <a href="#credibility" className="rounded-full px-4 py-2 transition hover:bg-white/70">Why A.P.G</a>
-              <a href="#contact" className="rounded-full border border-[#cbb58a] bg-white px-5 py-2.5 text-slate-900 shadow-sm transition hover:bg-[#faf6ef]">Contact</a>
+              <a
+                href="#thesis"
+                className="rounded-full px-4 py-2 transition hover:bg-white/70"
+              >
+                Focus
+              </a>
+              <a
+                href="#credibility"
+                className="rounded-full px-4 py-2 transition hover:bg-white/70"
+              >
+                Why A.P.G
+              </a>
+              <a
+                href="#contact"
+                className="rounded-full border border-[#cbb58a] bg-white px-5 py-2.5 text-slate-900 shadow-sm transition hover:bg-[#faf6ef]"
+              >
+                Contact
+              </a>
             </nav>
           </header>
 
@@ -152,16 +158,28 @@ export default function APInvestmentsWebsite() {
               className="grid gap-4"
             >
               <div className="rounded-[1.6rem] border border-[#d7c7aa] bg-white p-5 shadow-[0_10px_24px_rgba(15,23,42,0.04)]">
-                <div className="text-sm uppercase tracking-[0.18em] text-slate-500">Check size</div>
-                <div className="mt-2 text-2xl font-semibold text-slate-900">$25K to $100K</div>
+                <div className="text-sm uppercase tracking-[0.18em] text-slate-500">
+                  Check size
+                </div>
+                <div className="mt-2 text-2xl font-semibold text-slate-900">
+                  $25K to $100K
+                </div>
               </div>
               <div className="rounded-[1.6rem] border border-[#d7c7aa] bg-white p-5 shadow-[0_10px_24px_rgba(15,23,42,0.04)]">
-                <div className="text-sm uppercase tracking-[0.18em] text-slate-500">Stage</div>
-                <div className="mt-2 text-2xl font-semibold text-slate-900">Pre seed and seed</div>
+                <div className="text-sm uppercase tracking-[0.18em] text-slate-500">
+                  Stage
+                </div>
+                <div className="mt-2 text-2xl font-semibold text-slate-900">
+                  Pre seed and seed
+                </div>
               </div>
               <div className="rounded-[1.6rem] border border-[#d7c7aa] bg-white p-5 shadow-[0_10px_24px_rgba(15,23,42,0.04)]">
-                <div className="text-sm uppercase tracking-[0.18em] text-slate-500">Approach</div>
-                <div className="mt-2 text-2xl font-semibold text-slate-900">Fast and selective</div>
+                <div className="text-sm uppercase tracking-[0.18em] text-slate-500">
+                  Approach
+                </div>
+                <div className="mt-2 text-2xl font-semibold text-slate-900">
+                  Fast and selective
+                </div>
               </div>
             </motion.div>
           </div>
