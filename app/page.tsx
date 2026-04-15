@@ -1,18 +1,7 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-
-function APGLogoMark() {
-  return (
-    <div className="flex items-center">
-      <img
-        src="/apg-final-logo.svg"
-        alt="A.P.G Investments Ltd."
-        className="h-20 w-auto sm:h-24 lg:h-28"
-      />
-    </div>
-  );
-}
 
 const fadeUp = {
   hidden: { opacity: 0, y: 22 },
@@ -20,6 +9,55 @@ const fadeUp = {
 };
 
 export default function APInvestmentsWebsite() {
+  const [status, setStatus] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setStatus("Sending...");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const payload = {
+      access_key: "9c07c94c-7788-41ed-8a02-f5e9dbe31225",
+      subject: "New inquiry from apginvests.com",
+      from_name: "A.P.G Investments Ltd.",
+      name: formData.get("name"),
+      email: formData.get("email"),
+      company: formData.get("company"),
+      website: formData.get("website"),
+      revenue: formData.get("revenue"),
+      raise_amount: formData.get("raise_amount"),
+      message: formData.get("message"),
+    };
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        setStatus("Thanks. Your submission was sent.");
+        form.reset();
+      } else {
+        setStatus(data.message || "Something went wrong. Please try again.");
+      }
+    } catch {
+      setStatus("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+
   const thesis = [
     "Consumer brands",
     "Home services businesses",
@@ -91,7 +129,14 @@ export default function APInvestmentsWebsite() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(184,155,99,0.14),transparent_26%),radial-gradient(circle_at_left,rgba(255,255,255,0.55),transparent_24%)]" />
         <div className="relative mx-auto max-w-7xl px-5 py-6 sm:px-8 lg:px-10">
           <header className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-            <APGLogoMark />
+            <div className="flex items-center">
+              <img
+                src="/apg-final-logo.svg"
+                alt="A.P.G Investments Ltd."
+                className="h-20 w-auto sm:h-24 lg:h-28"
+              />
+            </div>
+
             <nav className="flex flex-wrap items-center gap-3 text-sm font-medium tracking-[0.08em] text-slate-700">
               <a
                 href="#thesis"
@@ -363,18 +408,9 @@ export default function APInvestmentsWebsite() {
             </div>
 
             <form
-              action="https://formsubmit.co/hello@apginvests.com"
-              method="POST"
+              onSubmit={handleSubmit}
               className="mt-8 w-full space-y-4 rounded-[1.75rem] border border-[#d7c7aa] bg-[#fcfaf6] p-6 shadow-sm lg:mt-0 lg:w-[500px]"
             >
-              <input
-                type="hidden"
-                name="_subject"
-                value="New inquiry from apginvests.com"
-              />
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_template" value="table" />
-
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
                   <label className="mb-2 block text-sm text-slate-500">
@@ -470,12 +506,17 @@ export default function APInvestmentsWebsite() {
 
               <button
                 type="submit"
-                className="w-full rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold tracking-[0.06em] text-white transition hover:opacity-95"
+                disabled={isSubmitting}
+                className="w-full rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold tracking-[0.06em] text-white transition hover:opacity-95 disabled:opacity-60"
               >
-                Submit inquiry
+                {isSubmitting ? "Submitting..." : "Submit inquiry"}
               </button>
 
-              <div className="pt-2 text-sm text-slate-500">
+              {status && (
+                <div className="pt-2 text-sm text-slate-500">{status}</div>
+              )}
+
+              <div className="pt-1 text-sm text-slate-500">
                 Contact: hello@apginvests.com • Toronto, Canada
               </div>
             </form>
