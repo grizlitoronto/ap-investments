@@ -1,528 +1,329 @@
-"use client";
+// app/page.tsx  (or pages/index.tsx — works for both App Router and Pages Router)
+// Drop this file in and adjust imports to match your existing layout/font setup
 
-import { useState } from "react";
-import { motion } from "framer-motion";
+import type { Metadata } from "next";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 22 },
-  show: { opacity: 1, y: 0 },
+export const metadata: Metadata = {
+  title: "A.P.G Investments — Capital & Digital Execution for High-Potential Businesses",
+  description:
+    "A.P.G Investments backs pre-seed and seed businesses with $25K–$100K in capital, plus hands-on digital and AI operational support. Toronto-based. Fast decisions.",
+  openGraph: {
+    title: "A.P.G Investments — Capital & Digital Execution",
+    description:
+      "We back high-potential businesses with decisive capital and real operator support — including digital transformation and AI improvements.",
+    url: "https://www.apginvests.com",
+    siteName: "A.P.G Investments Ltd.",
+    locale: "en_CA",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "A.P.G Investments — Capital & Digital Execution",
+    description:
+      "Pre-seed and seed capital ($25K–$100K) plus digital and AI operational support. Toronto. Fast and selective.",
+  },
+  alternates: {
+    canonical: "https://www.apginvests.com",
+  },
 };
 
-export default function APInvestmentsWebsite() {
-  const [status, setStatus] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setStatus("Sending...");
-
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-
-    const payload = {
-      access_key: "9c07c94c-7788-41ed-8a02-f5e9dbe31225",
-      subject: "New inquiry from apginvests.com",
-      from_name: "A.P.G Investments Ltd.",
-      name: formData.get("name"),
-      email: formData.get("email"),
-      company: formData.get("company"),
-      website: formData.get("website"),
-      revenue: formData.get("revenue"),
-      raise_amount: formData.get("raise_amount"),
-      message: formData.get("message"),
-    };
-
-    try {
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
-
-      const data = await res.json();
-
-      if (res.ok && data.success) {
-        setStatus("Thanks. Your submission was sent.");
-        form.reset();
-      } else {
-        setStatus(data.message || "Something went wrong. Please try again.");
-      }
-    } catch {
-      setStatus("Something went wrong. Please try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  }
-
-  const thesis = [
-    "Consumer brands",
-    "Home services businesses",
-    "eCommerce and retail tech",
-    "AI tools and digital platforms",
-    "Healthcare services",
-    "Logistics and distribution",
-  ];
-
-  const values = [
-    {
-      title: "Operator led",
-      text: "A.P.G brings practical experience across growth, digital execution, and operating discipline.",
-    },
-    {
-      title: "Fast decisions",
-      text: "We move quickly, communicate directly, and avoid the drawn out process many founders face elsewhere.",
-    },
-    {
-      title: "Selective capital",
-      text: "We back a focused number of businesses where conviction, time, and support can matter.",
-    },
-  ];
-
-  const credibility = [
-    {
-      stat: "Practical value creation",
-      label: "Growth strategy, conversion, operating leverage, and hands on commercial support.",
-    },
-    {
-      stat: "Direct access",
-      label: "Founders work directly with decision makers, not through layers of process.",
-    },
-    {
-      stat: "High signal review",
-      label: "We look for businesses with real traction, strong operators, and credible upside.",
-    },
-  ];
-
-  const criteria = [
-    "Check size from $25K to $100K",
-    "Pre seed and seed stage",
-    "Clear customer demand or commercial traction",
-    "Founders with speed, judgment, and resilience",
-    "Businesses where growth, operational improvement, or expansion can unlock value",
-  ];
-
-  const process = [
-    {
-      step: "01",
-      title: "Initial review",
-      text: "Send a concise overview, traction snapshot, and raise details.",
-    },
-    {
-      step: "02",
-      title: "Focused diligence",
-      text: "We assess fundamentals quickly and concentrate on where we can genuinely help.",
-    },
-    {
-      step: "03",
-      title: "Fast decision",
-      text: "If conviction is there, we move efficiently and keep the process clear.",
-    },
-  ];
-
+export default function Home() {
   return (
-    <div className="min-h-screen bg-[#f8f5ef] text-slate-900">
-      <section className="relative overflow-hidden border-b border-[#d8c8aa]/60 bg-[linear-gradient(135deg,#fbfaf7_0%,#f3ede3_55%,#ede3d2_100%)]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(184,155,99,0.14),transparent_26%),radial-gradient(circle_at_left,rgba(255,255,255,0.55),transparent_24%)]" />
-        <div className="relative mx-auto max-w-7xl px-5 py-6 sm:px-8 lg:px-10">
-          <header className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex items-center">
-              <img
-                src="/apg-final-logo.svg"
-                alt="A.P.G Investments Ltd."
-                className="h-20 w-auto sm:h-24 lg:h-28"
-              />
-            </div>
+    <main className="apg">
+      {/* ─── NAV ─────────────────────────────────────────────── */}
+      <nav className="apg-nav">
+        <a href="/" className="apg-logo" aria-label="A.P.G Investments home">
+          {/* Replace with your SVG logo import if preferred */}
+          <img src="/apg-final-logo.svg" alt="A.P.G Investments Ltd." height={32} />
+        </a>
+        <div className="apg-nav-links">
+          <a href="#what-we-offer">What we offer</a>
+          <a href="#thesis">Focus</a>
+          <a href="#credibility">Why A.P.G</a>
+          <a href="#contact" className="apg-nav-cta">Get in touch</a>
+        </div>
+      </nav>
 
-            <nav className="flex flex-wrap items-center gap-3 text-sm font-medium tracking-[0.08em] text-slate-700">
-              <a
-                href="#thesis"
-                className="rounded-full px-4 py-2 transition hover:bg-white/70"
-              >
-                Focus
-              </a>
-              <a
-                href="#credibility"
-                className="rounded-full px-4 py-2 transition hover:bg-white/70"
-              >
-                Why A.P.G
-              </a>
-              <a
-                href="#contact"
-                className="rounded-full border border-[#cbb58a] bg-white px-5 py-2.5 text-slate-900 shadow-sm transition hover:bg-[#faf6ef]"
-              >
-                Contact
-              </a>
-            </nav>
-          </header>
-
-          <div className="grid items-center gap-10 py-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-14 lg:py-12">
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              animate="show"
-              transition={{ duration: 0.45 }}
-              className="max-w-3xl"
-            >
-              <div className="inline-flex rounded-full border border-[#d8c8aa] bg-white/80 px-4 py-2 text-[12px] font-medium uppercase tracking-[0.28em] text-[#7a6337] shadow-sm">
-                Private capital with operator discipline
-              </div>
-
-              <h1 className="mt-5 max-w-4xl font-serif text-[2.7rem] font-semibold leading-[0.98] tracking-[-0.03em] text-slate-900 sm:text-[3.6rem] lg:text-[4.15rem]">
-                Backing high potential businesses with decisive capital and operator insight.
-              </h1>
-
-              <p className="mt-5 max-w-2xl text-[1.05rem] leading-8 text-slate-600 sm:text-[1.1rem]">
-                We back businesses with strong fundamentals, real commercial demand, and clear room to scale. Our focus is on opportunities where disciplined execution, practical strategic support, and fast decision making can unlock outsized long term value.
-              </p>
-
-              <div className="mt-8 flex flex-wrap gap-3">
-                <a
-                  href="#contact"
-                  className="rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold tracking-[0.06em] text-white shadow-[0_10px_24px_rgba(15,23,42,0.14)] transition hover:-translate-y-0.5 hover:opacity-95"
-                >
-                  Submit your company
-                </a>
-                <a
-                  href="#credibility"
-                  className="rounded-full border border-[#cbb58a] bg-white px-6 py-3 text-sm font-semibold tracking-[0.06em] text-slate-900 shadow-sm transition hover:-translate-y-0.5 hover:bg-[#faf6ef]"
-                >
-                  Why A.P.G
-                </a>
-              </div>
-            </motion.div>
-
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              animate="show"
-              transition={{ duration: 0.45, delay: 0.08 }}
-              className="grid gap-4"
-            >
-              <div className="rounded-[1.6rem] border border-[#d7c7aa] bg-white p-5 shadow-[0_10px_24px_rgba(15,23,42,0.04)]">
-                <div className="text-sm uppercase tracking-[0.18em] text-slate-500">
-                  Check size
-                </div>
-                <div className="mt-2 text-2xl font-semibold text-slate-900">
-                  $25K to $100K
-                </div>
-              </div>
-              <div className="rounded-[1.6rem] border border-[#d7c7aa] bg-white p-5 shadow-[0_10px_24px_rgba(15,23,42,0.04)]">
-                <div className="text-sm uppercase tracking-[0.18em] text-slate-500">
-                  Stage
-                </div>
-                <div className="mt-2 text-2xl font-semibold text-slate-900">
-                  Pre seed and seed
-                </div>
-              </div>
-              <div className="rounded-[1.6rem] border border-[#d7c7aa] bg-white p-5 shadow-[0_10px_24px_rgba(15,23,42,0.04)]">
-                <div className="text-sm uppercase tracking-[0.18em] text-slate-500">
-                  Approach
-                </div>
-                <div className="mt-2 text-2xl font-semibold text-slate-900">
-                  Fast and selective
-                </div>
-              </div>
-            </motion.div>
+      {/* ─── HERO ────────────────────────────────────────────── */}
+      <section className="apg-hero">
+        <div className="apg-hero-inner">
+          <p className="apg-eyebrow">Pre-seed &amp; seed · $25K–$100K · Toronto</p>
+          <h1>
+            Capital and digital execution for businesses built to last.
+          </h1>
+          <p className="apg-hero-sub">
+            We back high-potential businesses with two things most investors
+            can't offer together: decisive capital and hands-on digital and AI
+            operational support.
+          </p>
+          <div className="apg-hero-actions">
+            <a href="#contact" className="apg-btn-primary">Submit your company</a>
+            <a href="#what-we-offer" className="apg-btn-ghost">See what we offer</a>
           </div>
         </div>
       </section>
 
-      <section id="thesis" className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10">
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.4 }}
-          className="mb-10"
-        >
-          <div className="text-sm font-semibold uppercase tracking-[0.3em] text-[#8b6f3d]">
-            Investment focus
-          </div>
-          <h2 className="mt-4 font-serif text-[2.2rem] font-semibold leading-tight tracking-[-0.02em] text-slate-900 sm:text-[2.9rem]">
-            Sectors where execution and discipline compound value.
-          </h2>
-        </motion.div>
-
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {thesis.map((item, index) => (
-            <motion.div
-              key={item}
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.35, delay: index * 0.04 }}
-              className="rounded-[1.6rem] border border-[#d7c7aa] bg-white p-6 text-center shadow-[0_10px_30px_rgba(15,23,42,0.04)] transition hover:-translate-y-0.5"
-            >
-              <div className="text-lg font-medium text-slate-900">{item}</div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      <section id="credibility" className="border-y border-[#e2d6bf] bg-[#f3ede4] py-18">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.4 }}
-            className="max-w-3xl mb-10"
-          >
-            <div className="text-sm font-semibold uppercase tracking-[0.3em] text-[#8b6f3d]">
-              Why A.P.G
-            </div>
-            <h2 className="mt-4 font-serif text-[2.2rem] font-semibold leading-tight tracking-[-0.02em] text-slate-900 sm:text-[2.8rem]">
-              A practical investment partner with real operating context.
-            </h2>
-            <p className="mt-4 text-[1.02rem] leading-8 text-slate-600">
-              Founders and business owners do not just need capital. They need quick conviction, direct access, and a partner who understands growth, execution, and operational leverage. We aim to be highly responsive, selective, and useful from the first conversation.
+      {/* ─── WHAT WE OFFER (new section) ─────────────────────── */}
+      <section className="apg-section" id="what-we-offer">
+        <p className="apg-section-label">What we offer</p>
+        <h2>Two levers, not one.</h2>
+        <p className="apg-section-sub">
+          Most investors write a cheque and send a quarterly update request.
+          We bring capital and the operational knowledge to help you grow faster
+          once it's deployed.
+        </p>
+        <div className="apg-offer-grid">
+          <div className="apg-offer-card">
+            <div className="apg-offer-icon">◆</div>
+            <h3>Decisive capital</h3>
+            <p>
+              Check sizes from $25K to $100K at pre-seed and seed. We move
+              quickly, communicate directly, and don't run drawn-out processes.
+              If conviction is there, you'll know fast.
             </p>
-          </motion.div>
-
-          <div className="grid gap-5 md:grid-cols-3">
-            {values.map((item, index) => (
-              <motion.div
-                key={item.title}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.35, delay: index * 0.05 }}
-                className="rounded-[1.6rem] border border-[#d7c7aa] bg-white p-6 text-center shadow-[0_12px_32px_rgba(15,23,42,0.05)]"
-              >
-                <h3 className="text-lg font-semibold text-slate-900">
-                  {item.title}
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-slate-600">
-                  {item.text}
-                </p>
-              </motion.div>
-            ))}
+            <ul>
+              <li>$25K – $100K per investment</li>
+              <li>Pre-seed and seed stage</li>
+              <li>Fast diligence, clear terms</li>
+            </ul>
+          </div>
+          <div className="apg-offer-card apg-offer-card--accent">
+            <div className="apg-offer-icon">⬡</div>
+            <h3>Digital &amp; AI operational support</h3>
+            <p>
+              Beyond capital, we help portfolio businesses improve how they
+              operate — from conversion and eCommerce performance to AI workflow
+              automation, data infrastructure, and digital marketing execution.
+            </p>
+            <ul>
+              <li>eCommerce &amp; conversion optimization</li>
+              <li>AI tools and workflow automation</li>
+              <li>Digital marketing and growth infrastructure</li>
+              <li>Data and analytics foundations</li>
+            </ul>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-10">
-        <div className="mb-12 grid gap-5 md:grid-cols-3">
-          {credibility.map((item, index) => (
-            <motion.div
-              key={item.stat}
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.35, delay: index * 0.05 }}
-              className="rounded-[1.6rem] border border-[#dfd3bf] bg-[#fcfaf6] p-6 shadow-[0_10px_26px_rgba(15,23,42,0.035)]"
-            >
-              <div className="font-serif text-[1.65rem] font-semibold tracking-[-0.02em] text-slate-900">
-                {item.stat}
-              </div>
-              <p className="mt-2 text-sm leading-7 text-slate-600">
-                {item.label}
-              </p>
-            </motion.div>
+      {/* ─── FOCUS / THESIS ──────────────────────────────────── */}
+      <section className="apg-section apg-section--alt" id="thesis">
+        <p className="apg-section-label">Investment focus</p>
+        <h2>Sectors where execution and discipline compound value.</h2>
+        <div className="apg-sector-grid">
+          {[
+            "Consumer brands",
+            "Home services businesses",
+            "eCommerce and retail tech",
+            "AI tools and digital platforms",
+            "Healthcare services",
+            "Logistics and distribution",
+          ].map((s) => (
+            <div key={s} className="apg-sector-pill">{s}</div>
           ))}
-        </div>
-
-        <div className="grid gap-14 lg:grid-cols-2">
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.4 }}
-            className="rounded-[2rem] border border-[#e2d6bf] bg-[#fcfaf6] p-8 shadow-[0_14px_34px_rgba(15,23,42,0.04)]"
-          >
-            <div className="text-sm font-semibold uppercase tracking-[0.3em] text-[#8b6f3d]">
-              What we look for
-            </div>
-            <h2 className="mt-4 font-serif text-[2.1rem] font-semibold leading-tight tracking-[-0.02em] text-slate-900 sm:text-[2.7rem]">
-              Clear signals, strong operators, and room to scale.
-            </h2>
-
-            <div className="mt-6 space-y-3">
-              {criteria.map((item) => (
-                <div
-                  key={item}
-                  className="rounded-2xl border border-[#d7c7aa] bg-white p-4 text-slate-700"
-                >
-                  {item}
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.4, delay: 0.05 }}
-            className="rounded-[2rem] border border-[#e2d6bf] bg-white p-8 shadow-[0_14px_34px_rgba(15,23,42,0.04)]"
-          >
-            <div className="text-sm font-semibold uppercase tracking-[0.3em] text-[#8b6f3d]">
-              Process
-            </div>
-            <h2 className="mt-4 font-serif text-[2.1rem] font-semibold leading-tight tracking-[-0.02em] text-slate-900 sm:text-[2.7rem]">
-              Simple, quick, and founder friendly.
-            </h2>
-
-            <div className="mt-6 space-y-4">
-              {process.map((item) => (
-                <div
-                  key={item.step}
-                  className="rounded-[1.35rem] border border-[#d7c7aa] bg-[#fcfaf6] p-5"
-                >
-                  <div className="text-sm text-slate-500">{item.step}</div>
-                  <div className="mt-1 font-semibold text-slate-900">
-                    {item.title}
-                  </div>
-                  <p className="mt-1 text-sm text-slate-600">{item.text}</p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
         </div>
       </section>
 
-      <section id="contact" className="border-t border-[#d7c7aa] bg-[#fbfaf7]">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10">
-          <div className="rounded-[2rem] border border-[#d7c7aa] bg-white p-6 shadow-[0_16px_40px_rgba(15,23,42,0.06)] sm:p-10 lg:flex lg:items-start lg:justify-between lg:gap-12">
-            <div className="max-w-2xl">
-              <div className="text-sm font-semibold uppercase tracking-[0.3em] text-[#8b6f3d]">
-                Contact
-              </div>
-              <h2 className="mt-4 font-serif text-[2.1rem] font-semibold leading-tight tracking-[-0.02em] text-slate-900 sm:text-[2.7rem]">
-                Ready to start a conversation?
-              </h2>
-              <p className="mt-4 max-w-2xl text-[1.02rem] leading-8 text-slate-600">
-                Share a brief overview of your business, current traction, funding needs, and why A.P.G is the right fit. We review opportunities selectively and prioritize situations where speed, clarity, and practical support matter.
-              </p>
+      {/* ─── CREDIBILITY (expanded, no name) ─────────────────── */}
+      <section className="apg-section" id="credibility">
+        <p className="apg-section-label">Why A.P.G</p>
+        <h2>Operator experience, not just operator vocabulary.</h2>
+        <p className="apg-section-sub">
+          The principal behind A.P.G has spent over a decade building and
+          leading digital and eCommerce businesses — owning P&amp;Ls, running
+          product and engineering orgs, and turning digital divisions from
+          loss-making to profitable. This is capital backed by someone who has
+          sat in the chair.
+        </p>
+
+        <div className="apg-cred-grid">
+          <div className="apg-cred-stat">
+            <span className="apg-cred-num">10+</span>
+            <span className="apg-cred-desc">Years operating digital and eCommerce businesses</span>
+          </div>
+          <div className="apg-cred-stat">
+            <span className="apg-cred-num">VP+</span>
+            <span className="apg-cred-desc">Leadership experience across product, marketing, and digital ops</span>
+          </div>
+          <div className="apg-cred-stat">
+            <span className="apg-cred-num">$0 → ✓</span>
+            <span className="apg-cred-desc">Track record turning digital divisions from losses to profitability</span>
+          </div>
+        </div>
+
+        <div className="apg-pillars">
+          {[
+            {
+              title: "Operator-led",
+              body: "Practical experience across growth, digital execution, product management, and operating discipline — not advisory distance.",
+            },
+            {
+              title: "Fast decisions",
+              body: "We move quickly, communicate directly, and avoid the drawn-out process many founders face with institutional investors.",
+            },
+            {
+              title: "Selective capital",
+              body: "We back a focused number of businesses where conviction, time, and support can genuinely matter.",
+            },
+            {
+              title: "Digital & AI edge",
+              body: "We help portfolio companies implement the tools and workflows that drive real operating leverage — not just point to them.",
+            },
+          ].map((p) => (
+            <div key={p.title} className="apg-pillar">
+              <h4>{p.title}</h4>
+              <p>{p.body}</p>
             </div>
+          ))}
+        </div>
+      </section>
 
-            <form
-              onSubmit={handleSubmit}
-              className="mt-8 w-full space-y-4 rounded-[1.75rem] border border-[#d7c7aa] bg-[#fcfaf6] p-6 shadow-sm lg:mt-0 lg:w-[500px]"
-            >
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div>
-                  <label className="mb-2 block text-sm text-slate-500">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    required
-                    className="w-full rounded-2xl border border-[#d2c3a4] bg-white px-4 py-3 text-slate-900 outline-none placeholder:text-slate-400"
-                    placeholder="Your name"
-                  />
-                </div>
+      {/* ─── WHAT WE LOOK FOR ────────────────────────────────── */}
+      <section className="apg-section apg-section--alt">
+        <p className="apg-section-label">What we look for</p>
+        <h2>Clear signals, strong operators, room to scale.</h2>
+        <div className="apg-criteria-list">
+          {[
+            "Check size from $25K to $100K",
+            "Pre-seed and seed stage",
+            "Clear customer demand or commercial traction",
+            "Founders with speed, judgment, and resilience",
+            "Businesses where digital improvements, growth, or expansion can unlock real value",
+            "Openness to working closely with the investment partner — not just taking capital",
+          ].map((c) => (
+            <div key={c} className="apg-criteria-item">
+              <span className="apg-criteria-check">→</span>
+              <span>{c}</span>
+            </div>
+          ))}
+        </div>
+      </section>
 
-                <div>
-                  <label className="mb-2 block text-sm text-slate-500">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    className="w-full rounded-2xl border border-[#d2c3a4] bg-white px-4 py-3 text-slate-900 outline-none placeholder:text-slate-400"
-                    placeholder="you@company.com"
-                  />
-                </div>
-              </div>
-
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div>
-                  <label className="mb-2 block text-sm text-slate-500">
-                    Company
-                  </label>
-                  <input
-                    type="text"
-                    name="company"
-                    className="w-full rounded-2xl border border-[#d2c3a4] bg-white px-4 py-3 text-slate-900 outline-none placeholder:text-slate-400"
-                    placeholder="Company name"
-                  />
-                </div>
-
-                <div>
-                  <label className="mb-2 block text-sm text-slate-500">
-                    Website
-                  </label>
-                  <input
-                    type="url"
-                    name="website"
-                    className="w-full rounded-2xl border border-[#d2c3a4] bg-white px-4 py-3 text-slate-900 outline-none placeholder:text-slate-400"
-                    placeholder="https://yourcompany.com"
-                  />
-                </div>
-              </div>
-
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div>
-                  <label className="mb-2 block text-sm text-slate-500">
-                    Revenue
-                  </label>
-                  <input
-                    type="text"
-                    name="revenue"
-                    className="w-full rounded-2xl border border-[#d2c3a4] bg-white px-4 py-3 text-slate-900 outline-none placeholder:text-slate-400"
-                    placeholder="e.g. Pre revenue or $500K ARR"
-                  />
-                </div>
-
-                <div>
-                  <label className="mb-2 block text-sm text-slate-500">
-                    Raise amount
-                  </label>
-                  <input
-                    type="text"
-                    name="raise_amount"
-                    className="w-full rounded-2xl border border-[#d2c3a4] bg-white px-4 py-3 text-slate-900 outline-none placeholder:text-slate-400"
-                    placeholder="e.g. $250K"
-                  />
-                </div>
-              </div>
-
+      {/* ─── PROCESS ─────────────────────────────────────────── */}
+      <section className="apg-section">
+        <p className="apg-section-label">Process</p>
+        <h2>Simple, quick, and founder-friendly.</h2>
+        <div className="apg-process-steps">
+          {[
+            { n: "01", title: "Initial review", body: "Send a concise overview, traction snapshot, and raise details. We read everything." },
+            { n: "02", title: "Focused diligence", body: "We assess fundamentals quickly and focus on where we can genuinely help beyond capital." },
+            { n: "03", title: "Fast decision", body: "If conviction is there, we move efficiently and keep the process clear and direct." },
+          ].map((s) => (
+            <div key={s.n} className="apg-step">
+              <span className="apg-step-num">{s.n}</span>
               <div>
-                <label className="mb-2 block text-sm text-slate-500">
-                  Message
-                </label>
+                <h4>{s.title}</h4>
+                <p>{s.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ─── CONTACT (dual CTA) ──────────────────────────────── */}
+      <section className="apg-section apg-section--contact" id="contact">
+        <p className="apg-section-label">Get in touch</p>
+        <h2>Ready to start a conversation?</h2>
+        <p className="apg-section-sub">
+          Two ways in — a quick intro if you're still exploring, or the full
+          submission if you're ready to move.
+        </p>
+
+        <div className="apg-contact-split">
+          {/* Light-touch CTA */}
+          <div className="apg-contact-light">
+            <h3>Quick intro</h3>
+            <p>
+              Not ready for a full submission? Send a short note to{" "}
+              <a href="mailto:hello@apginvests.com">hello@apginvests.com</a>{" "}
+              with a one-paragraph overview of what you're building and where
+              you are. We respond to everything.
+            </p>
+            <a href="mailto:hello@apginvests.com" className="apg-btn-ghost">
+              Send a note →
+            </a>
+          </div>
+
+          {/* Full form */}
+          <div className="apg-contact-form-wrap">
+            <h3>Full submission</h3>
+            <form
+              className="apg-form"
+              action="/api/contact" // wire to your preferred handler / Resend / Formspree
+              method="POST"
+            >
+              <div className="apg-form-row apg-form-row--half">
+                <div className="apg-field">
+                  <label htmlFor="name">Name</label>
+                  <input id="name" name="name" type="text" required placeholder="Your name" />
+                </div>
+                <div className="apg-field">
+                  <label htmlFor="email">Email</label>
+                  <input id="email" name="email" type="email" required placeholder="you@company.com" />
+                </div>
+              </div>
+              <div className="apg-form-row apg-form-row--half">
+                <div className="apg-field">
+                  <label htmlFor="company">Company</label>
+                  <input id="company" name="company" type="text" placeholder="Company name" />
+                </div>
+                <div className="apg-field">
+                  <label htmlFor="website">Website</label>
+                  <input id="website" name="website" type="url" placeholder="https://" />
+                </div>
+              </div>
+              <div className="apg-form-row apg-form-row--half">
+                <div className="apg-field">
+                  <label htmlFor="revenue">Current revenue</label>
+                  <input id="revenue" name="revenue" type="text" placeholder="e.g. Pre-revenue / $5K MRR" />
+                </div>
+                <div className="apg-field">
+                  <label htmlFor="raise">Raise amount</label>
+                  <input id="raise" name="raise" type="text" placeholder="e.g. $50K" />
+                </div>
+              </div>
+
+              {/* New field: what kind of support */}
+              <div className="apg-field">
+                <label htmlFor="support">What kind of support matters most to you?</label>
+                <select id="support" name="support">
+                  <option value="">Select one</option>
+                  <option value="capital">Capital only</option>
+                  <option value="digital">Digital &amp; AI operational support</option>
+                  <option value="both">Both capital and operational support</option>
+                </select>
+              </div>
+
+              <div className="apg-field">
+                <label htmlFor="message">Overview</label>
                 <textarea
+                  id="message"
                   name="message"
+                  rows={4}
                   required
-                  rows={5}
-                  className="w-full rounded-2xl border border-[#d2c3a4] bg-white px-4 py-3 text-slate-900 outline-none placeholder:text-slate-400"
-                  placeholder="Tell us about your business, traction, and why A.P.G is a fit."
+                  placeholder="Brief overview of your business, traction, and why A.P.G is the right fit."
                 />
               </div>
-
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold tracking-[0.06em] text-white transition hover:opacity-95 disabled:opacity-60"
-              >
-                {isSubmitting ? "Submitting..." : "Submit inquiry"}
+              <button type="submit" className="apg-btn-primary apg-btn-full">
+                Submit inquiry
               </button>
-
-              {status && (
-                <div className="pt-2 text-sm text-slate-500">{status}</div>
-              )}
-
-              <div className="pt-1 text-sm text-slate-500">
-                Contact: hello@apginvests.com • Toronto, Canada
-              </div>
             </form>
           </div>
         </div>
       </section>
-    </div>
+
+      {/* ─── FOOTER ──────────────────────────────────────────── */}
+      <footer className="apg-footer">
+        <div className="apg-footer-inner">
+          <span>© {new Date().getFullYear()} A.P.G Investments Ltd. · Toronto, Canada</span>
+          <div className="apg-footer-links">
+            <a href="mailto:hello@apginvests.com">hello@apginvests.com</a>
+            {/* Replace href with your actual LinkedIn URL */}
+            <a href="https://www.linkedin.com/company/apg-investments-ltd-canada" target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </footer>
+    </main>
   );
 }

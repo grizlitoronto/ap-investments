@@ -1,0 +1,234 @@
+/* ─────────────────────────────────────────────────────────────────
+   APG Investments — site styles
+   Add these to globals.css, or import as apg.css into your layout.
+   Existing Tailwind/reset won't conflict — all classes are namespaced .apg-*
+   ───────────────────────────────────────────────────────────────── */
+
+/* ── Tokens ── */
+:root {
+  --apg-black:   #0d0d0d;
+  --apg-white:   #fafaf8;
+  --apg-gold:    #b89b5e;
+  --apg-gold-lt: #e8ddc8;
+  --apg-muted:   #6b6b63;
+  --apg-border:  rgba(0,0,0,0.10);
+  --apg-bg-alt:  #f4f3ef;
+  --apg-radius:  6px;
+  --apg-max:     1120px;
+  --apg-font:    'Garamond', 'EB Garamond', Georgia, serif;
+  --apg-sans:    'DM Sans', system-ui, sans-serif;
+}
+
+/* ── Base ── */
+.apg { font-family: var(--apg-sans); color: var(--apg-black); background: var(--apg-white); }
+.apg *, .apg *::before, .apg *::after { box-sizing: border-box; }
+.apg a { color: inherit; text-decoration: none; }
+.apg h1, .apg h2, .apg h3, .apg h4 { font-family: var(--apg-font); font-weight: 400; line-height: 1.2; margin: 0 0 1rem; }
+.apg h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+.apg h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
+.apg h3 { font-size: 1.25rem; }
+.apg h4 { font-size: 1rem; font-family: var(--apg-sans); font-weight: 500; }
+.apg p  { margin: 0 0 1rem; line-height: 1.7; color: #3a3a36; }
+.apg ul { padding-left: 1rem; margin: 0.75rem 0 0; }
+.apg li { font-size: 0.9rem; color: var(--apg-muted); line-height: 1.8; }
+
+/* ── Nav ── */
+.apg-nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.25rem 2rem; border-bottom: 0.5px solid var(--apg-border);
+  position: sticky; top: 0; background: var(--apg-white); z-index: 100;
+}
+.apg-nav-links { display: flex; align-items: center; gap: 2rem; font-size: 0.875rem; }
+.apg-nav-links a { color: var(--apg-muted); transition: color 0.15s; }
+.apg-nav-links a:hover { color: var(--apg-black); }
+.apg-nav-cta {
+  color: var(--apg-white) !important;
+  background: var(--apg-black);
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--apg-radius);
+  font-weight: 500;
+  transition: background 0.15s;
+}
+.apg-nav-cta:hover { background: #2a2a2a !important; }
+
+/* ── Buttons ── */
+.apg-btn-primary {
+  display: inline-block;
+  background: var(--apg-black); color: var(--apg-white);
+  padding: 0.75rem 2rem; border-radius: var(--apg-radius);
+  font-size: 0.9rem; font-weight: 500;
+  transition: background 0.15s;
+  border: none; cursor: pointer;
+}
+.apg-btn-primary:hover { background: #2a2a2a; }
+.apg-btn-ghost {
+  display: inline-block;
+  background: transparent; color: var(--apg-black);
+  padding: 0.75rem 2rem; border-radius: var(--apg-radius);
+  font-size: 0.9rem; font-weight: 500;
+  border: 1px solid var(--apg-border);
+  transition: border-color 0.15s, background 0.15s;
+}
+.apg-btn-ghost:hover { border-color: var(--apg-black); background: rgba(0,0,0,0.03); }
+.apg-btn-full { width: 100%; text-align: center; }
+
+/* ── Hero ── */
+.apg-hero {
+  padding: 6rem 2rem 5rem;
+  max-width: var(--apg-max); margin: 0 auto;
+}
+.apg-hero-inner { max-width: 720px; }
+.apg-eyebrow {
+  font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--apg-gold); font-weight: 500; margin-bottom: 1.25rem;
+  font-family: var(--apg-sans);
+}
+.apg-hero-sub { font-size: 1.15rem; color: #4a4a44; max-width: 580px; margin-bottom: 2rem; }
+.apg-hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+/* ── Sections ── */
+.apg-section {
+  padding: 5rem 2rem;
+  max-width: var(--apg-max); margin: 0 auto;
+}
+.apg-section--alt {
+  max-width: 100%;
+  background: var(--apg-bg-alt);
+  padding: 5rem 2rem;
+}
+.apg-section--alt > * { max-width: var(--apg-max); margin-left: auto; margin-right: auto; }
+.apg-section-label {
+  font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--apg-gold); font-weight: 500; margin-bottom: 0.75rem;
+}
+.apg-section-sub {
+  font-size: 1.05rem; color: #4a4a44; max-width: 620px;
+  margin-bottom: 2.5rem; line-height: 1.75;
+}
+
+/* ── Offer grid (two cards) ── */
+.apg-offer-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+.apg-offer-card {
+  border: 1px solid var(--apg-border); border-radius: 10px;
+  padding: 2rem 2rem 2rem;
+  background: var(--apg-white);
+}
+.apg-offer-card--accent {
+  border-color: var(--apg-gold-lt);
+  background: #fdfaf5;
+}
+.apg-offer-icon { font-size: 1.25rem; color: var(--apg-gold); margin-bottom: 1rem; }
+.apg-offer-card h3 { margin-bottom: 0.75rem; }
+
+/* ── Sector pills ── */
+.apg-sector-grid {
+  display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem;
+  max-width: var(--apg-max);
+}
+.apg-sector-pill {
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--apg-border);
+  border-radius: 100px;
+  font-size: 0.875rem;
+  background: var(--apg-white);
+  color: var(--apg-black);
+}
+
+/* ── Credibility stats ── */
+.apg-cred-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+  margin: 2.5rem 0;
+}
+.apg-cred-stat {
+  border-top: 2px solid var(--apg-gold);
+  padding-top: 1.25rem;
+}
+.apg-cred-num {
+  display: block; font-family: var(--apg-font);
+  font-size: 2.25rem; color: var(--apg-black); margin-bottom: 0.5rem;
+}
+.apg-cred-desc { font-size: 0.875rem; color: var(--apg-muted); line-height: 1.5; }
+
+/* ── Pillars ── */
+.apg-pillars {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;
+  margin-top: 1rem;
+}
+.apg-pillar { padding: 1.5rem; border: 1px solid var(--apg-border); border-radius: 8px; }
+.apg-pillar h4 { margin-bottom: 0.5rem; }
+.apg-pillar p { font-size: 0.9rem; margin: 0; }
+
+/* ── Criteria ── */
+.apg-criteria-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; max-width: var(--apg-max); }
+.apg-criteria-item { display: flex; align-items: flex-start; gap: 1rem; }
+.apg-criteria-check { color: var(--apg-gold); font-weight: 500; flex-shrink: 0; margin-top: 2px; }
+
+/* ── Process ── */
+.apg-process-steps { display: flex; flex-direction: column; gap: 2rem; margin-top: 2.5rem; }
+.apg-step { display: flex; gap: 2rem; align-items: flex-start; }
+.apg-step-num {
+  font-family: var(--apg-font); font-size: 2rem; color: var(--apg-gold-lt);
+  flex-shrink: 0; line-height: 1; min-width: 2.5rem;
+}
+.apg-step h4 { margin-bottom: 0.35rem; }
+.apg-step p  { margin: 0; font-size: 0.9rem; }
+
+/* ── Contact ── */
+.apg-section--contact {
+  border-top: 1px solid var(--apg-border);
+}
+.apg-contact-split {
+  display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; margin-top: 2.5rem;
+  align-items: start;
+}
+.apg-contact-light h3 { margin-bottom: 0.75rem; }
+.apg-contact-light p  { font-size: 0.9rem; color: var(--apg-muted); }
+.apg-contact-light a.apg-btn-ghost { margin-top: 1rem; }
+.apg-contact-form-wrap h3 { margin-bottom: 1.25rem; }
+
+/* ── Form ── */
+.apg-form { display: flex; flex-direction: column; gap: 1rem; }
+.apg-form-row { display: flex; gap: 1rem; }
+.apg-form-row--half > * { flex: 1; min-width: 0; }
+.apg-field { display: flex; flex-direction: column; gap: 0.35rem; }
+.apg-field label { font-size: 0.8rem; font-weight: 500; color: var(--apg-muted); }
+.apg-field input,
+.apg-field select,
+.apg-field textarea {
+  width: 100%; padding: 0.65rem 0.875rem;
+  border: 1px solid var(--apg-border); border-radius: var(--apg-radius);
+  font-family: var(--apg-sans); font-size: 0.9rem; color: var(--apg-black);
+  background: var(--apg-white); outline: none;
+  transition: border-color 0.15s;
+}
+.apg-field input:focus,
+.apg-field select:focus,
+.apg-field textarea:focus { border-color: var(--apg-gold); }
+.apg-field textarea { resize: vertical; }
+
+/* ── Footer ── */
+.apg-footer {
+  border-top: 1px solid var(--apg-border);
+  padding: 1.5rem 2rem;
+}
+.apg-footer-inner {
+  max-width: var(--apg-max); margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.8rem; color: var(--apg-muted);
+}
+.apg-footer-links { display: flex; gap: 1.5rem; }
+.apg-footer-links a:hover { color: var(--apg-black); }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .apg-nav-links { display: none; }
+  .apg-offer-grid,
+  .apg-cred-grid,
+  .apg-pillars,
+  .apg-contact-split { grid-template-columns: 1fr; gap: 1.25rem; }
+  .apg-form-row { flex-direction: column; }
+  .apg-footer-inner { flex-direction: column; gap: 0.75rem; text-align: center; }
+}
