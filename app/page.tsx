@@ -139,7 +139,7 @@ export default function APInvestmentsWebsite() {
               <img
                 src="/apg-final-logo.svg"
                 alt="A.P.G Investments Ltd."
-                className="h-12 w-auto sm:h-14"
+                className="h-16 w-auto sm:h-20"
               />
             </div>
 
