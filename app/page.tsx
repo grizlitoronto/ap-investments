@@ -376,7 +376,7 @@ export default function APInvestmentsWebsite() {
             </p>
           </motion.div>
 
-          <div className="grid gap-5 md:grid-cols-3">
+          <div className="grid gap-5 sm:grid-cols-2">
             {values.map((item, index) => (
               <motion.div
                 key={item.title}
