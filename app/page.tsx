@@ -139,7 +139,7 @@ export default function APInvestmentsWebsite() {
               <img
                 src="/apg-final-logo.svg"
                 alt="A.P.G Investments Ltd."
-                className="h-20 w-auto sm:h-24 lg:h-28"
+                className="h-12 w-auto sm:h-14"
               />
             </div>
 
@@ -180,7 +180,7 @@ export default function APInvestmentsWebsite() {
               className="max-w-3xl"
             >
               <div className="inline-flex rounded-full border border-[#d8c8aa] bg-white/80 px-4 py-2 text-[12px] font-medium uppercase tracking-[0.28em] text-[#7a6337] shadow-sm">
-                Private capital with operator discipline
+                Pre-seed &amp; seed · $25K–$100K · Toronto
               </div>
 
               <h1 className="mt-5 max-w-4xl font-serif text-[2.7rem] font-semibold leading-[0.98] tracking-[-0.03em] text-slate-900 sm:text-[3.6rem] lg:text-[4.15rem]">
@@ -243,7 +243,8 @@ export default function APInvestmentsWebsite() {
         </div>
       </section>
 
-      <section id="offer" className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10">
+      <section id="offer" className="border-y border-[#e2d6bf] bg-[#f3ede4] py-20">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -316,6 +317,7 @@ export default function APInvestmentsWebsite() {
               ))}
             </div>
           </motion.div>
+        </div>
         </div>
       </section>
 
